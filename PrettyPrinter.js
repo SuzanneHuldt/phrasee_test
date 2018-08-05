@@ -1,9 +1,15 @@
 
+var likesOutput = "";
+var commentsOutput = "";
+
 class PrettyPrinter{
 
   prettyPrint(array){
     this.printLikes(array)
     this.printComments(array)
+    var output = likesOutput.concat(commentsOutput)
+    return output;
+
   }
 
   printLikes(array){
@@ -11,12 +17,12 @@ class PrettyPrinter{
     if(likes.length > 0){
       var i;
       var like;
-      for(i = 0; i < (likes.length - 2); i++){
+      for(i = 0; i < (likes.length - 1); i++){
         like = likes[i];
-        console.log(like + ', ')
+        likesOutput = likesOutput.concat(like + ', ');
       }
-      console.log('and ' + likes[(likes.length - 1)])
-      console.log('liked your post')
+      likesOutput = likesOutput.concat('and ' + likes[(likes.length - 1)])
+      likesOutput = likesOutput.concat(' liked your post ')
     }
   }
 
@@ -28,7 +34,7 @@ class PrettyPrinter{
       var name;
       for(i = 0; i < comments.length; i++){
         comment = comments[i];
-        console.log(comment)
+        commentsOutput = commentsOutput.concat(comment + ' ')
       }
     }
   }

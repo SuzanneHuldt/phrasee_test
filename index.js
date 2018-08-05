@@ -12,12 +12,8 @@ function groupNotifications(id, notifications){
   return grouper.groupNotifications(id, notifications)
 }
 
-
-
 app.get('/:id', function (req, res){
-  prettyPrinter.prettyPrint((groupNotifications(req.params.id, notifications)));
+  res.send(prettyPrinter.prettyPrint(groupNotifications(req.params.id, notifications)));
 })
-
-
 
 app.listen(8080)

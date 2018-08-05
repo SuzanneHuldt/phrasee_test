@@ -2,6 +2,7 @@
 
 const likes = [];
 const comments = [];
+const groupedNotifications = []
 
 class Grouper{
   groupNotifications(id, notifications){
@@ -12,8 +13,9 @@ class Grouper{
       this.getLikes(notification, id);
       this.getComments(notification, id);
     }
-    console.log(likes)
-    console.log(comments)
+    groupedNotifications.push(likes);
+    groupedNotifications.push(comments);
+    return groupedNotifications;
   }
 
   getLikes(notification, id){
@@ -27,8 +29,7 @@ class Grouper{
   getComments(notification, id){
     if(notification.post.id == id){
       if(notification.type == "Comment"){
-        comments.push(notification.user.name)
-        comments.push(notification.comment.commentText)
+        comments.push(notification.user.name + ' ' + notification.comment.commentText)
       }
     }
   }

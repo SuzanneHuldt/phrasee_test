@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SuzanneHuldt/phrasee_test/issues"
   },
-  "homepage": "https://github.com/SuzanneHuldt/phrasee_test#readme"
+  "homepage": "https://github.com/SuzanneHuldt/phrasee_test#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

@@ -7,10 +7,7 @@ class PrettyPrinter{
     return this.getTemplate(object.likes, object.comments, object.post)
   }
 
-  likePrinter(likes){
-    if(this.isEmpty(likes)){
-      return "";
-    }
+  likePrinter(likes, post){
     var printedLikes = "";
     var i;
     var like;
@@ -18,26 +15,33 @@ class PrettyPrinter{
       like = likes[i];
       printedLikes = printedLikes.concat(like + ", ");
     }
-    printedLikes = printedLikes.concat('and ' + likes[(likes.length - 1)])
-    return printedLikes;
+    if(this.isEmpty(likes)){
+      return "";
+    } else {
+      printedLikes = printedLikes.concat("and " + likes[(likes.length - 1)]+ " liked your post " + post)
+      return printedLikes;
+    }
+
   }
 
-  commentPrinter(comments){
-    if(this.isEmpty(comments)){
-      return "";
-    }
+  commentPrinter(comments, post){
     var printedComments = "";
     var i;
     var comment;
     for(i = 0; i < comments.length; i++){
       comment = comments[i];
-      printedComments = printedComments.concat(comment.name + " commented on your post with: " + comment.comment + "\n");
+      printedComments = printedComments.concat(comment.name + " commented on your post " + post + " with: " + comment.comment);
     }
+    if(this.isEmpty(comments)){
+      return "";
+    } else {
     return printedComments;
+    }
+
   }
 
   getTemplate(likes, comments, post){
-    let template = post + " " + this.likePrinter(likes) + " liked your post" + "\n" + post + " " + this.commentPrinter(comments) + "END";
+    let template = this.likePrinter(likes, post) + this.commentPrinter(comments, post);
     return template;
   }
 

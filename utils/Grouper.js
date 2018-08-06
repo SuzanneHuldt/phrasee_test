@@ -3,10 +3,7 @@
 class Grouper{
 
   groupNotifications(id, notifications){
-    this.getNotificationObject();
-    this.setLikes();
-    this.setComments();
-    this.setPost(id, notifications);
+    this.setObject(id, notifications);
     var i;
     var notification;
     for(i = 0; i < notifications.length; i++){
@@ -52,7 +49,14 @@ class Grouper{
     return commentPair
   }
 
-  getNotificationObject(){
+  setObject(id, notifications){
+    this.setNotificationObject();
+    this.setLikes();
+    this.setComments();
+    this.setPost(id, notifications);
+  }
+
+  setNotificationObject(){
     this.groupedNotifications = {"post": "", "likes": [], "comments":[]};
   }
 

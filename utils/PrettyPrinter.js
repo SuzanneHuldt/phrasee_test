@@ -2,7 +2,7 @@
 class PrettyPrinter{
   prettyPrint(object){
     if( (this.isEmpty(object.comments) && this.isEmpty(object.likes)) ){
-      return "This post received no notifcations";
+      return "This post received no notifcations or was not found";
     }
     return this.getTemplate(object.likes, object.comments, object.post)
   }
@@ -18,7 +18,7 @@ class PrettyPrinter{
     if(this.isEmpty(likes)){
       return "";
     } else {
-      printedLikes = printedLikes.concat("and " + likes[(likes.length - 1)]+ " liked your post " + post)
+      printedLikes = printedLikes.concat("and " + likes[(likes.length - 1)]+ " liked your post " + post + "\r\n")
       return printedLikes;
     }
 
@@ -30,7 +30,7 @@ class PrettyPrinter{
     var comment;
     for(i = 0; i < comments.length; i++){
       comment = comments[i];
-      printedComments = printedComments.concat(comment.name + " commented on your post " + post + " with: " + comment.comment);
+      printedComments = printedComments.concat(comment.name + " commented on your post " + post + " with: " + comment.comment + "\r\n");
     }
     if(this.isEmpty(comments)){
       return "";

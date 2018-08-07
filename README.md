@@ -2,7 +2,6 @@
 
 ### quickstart guide
 in the project directory:
-- run ``npm init``
 - run ``npm install``
 - run ``node index.js``
 
@@ -13,4 +12,4 @@ in the project directory:
 ### notes
 the class Grouper contains the algorithm that sorts the notifications into groups. for the convenience of the user (and my own amusement!) i also wrote a class PrettyPrinter that prepares the grouped content for easy and clear printing to the screen.
 
-detailed comments are given throughout the code. 
+detailed comments are given throughout the code.

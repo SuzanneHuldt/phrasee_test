@@ -4,7 +4,7 @@
   "description": "phrasee tech test",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/SuzanneHuldt/phrasee_test#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "mocha": "^5.2.0"
   }
 }

@@ -18,7 +18,7 @@ class PrettyPrinter{
     if(this.isEmpty(likes)){
       return "";
     } else {
-      printedLikes = printedLikes.concat("and " + likes[(likes.length - 1)]+ " liked your post " + post + "\r\n")
+      printedLikes = printedLikes.concat("and " + likes[(likes.length - 1)]+ " liked your post " + post)
       return printedLikes;
     }
 
@@ -30,11 +30,12 @@ class PrettyPrinter{
     var comment;
     for(i = 0; i < comments.length; i++){
       comment = comments[i];
-      printedComments = printedComments.concat(comment.name + " commented on your post " + post + " with: " + comment.comment + "\r\n");
+      printedComments = printedComments.concat(comment.name + " commented on your post with: " + comment.comment);
     }
     if(this.isEmpty(comments)){
       return "";
     } else {
+    printedComments = "Your post " + post + " was commented on: " + printedComments
     return printedComments;
     }
 
